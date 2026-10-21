@@ -1,0 +1,21 @@
+COMPLEXO AMERICA RP — ARQUIVOS WL ATUALIZADOS
+
+Arquivos incluídos:
+- index.html
+- admin.html
+- assets/js/config.js
+- assets/js/app.js
+- assets/js/admin.js
+
+INSTALAÇÃO
+1. Faça backup dos arquivos atuais no GitHub.
+2. Envie/substitua os cinco arquivos mantendo exatamente a estrutura de pastas do ZIP.
+3. Preserve assets/css/style.css; ele não está incluído porque não foi alterado.
+4. Antes de testar inscrições, configure e publique as Edge Functions wl-questions-public e wl-questions-admin, a migração SQL da tabela wl_questions e a versão de submit-wl que corrige as respostas por texto no servidor.
+5. O formulário envia question_responses como um objeto {question_key: texto_da_alternativa}. A função submit-wl precisa estar preparada para esse formato.
+6. A função wl-questions-admin precisa validar a sessão e autorizar o e-mail consultando public.wl_admins, para combinar com o painel atual. Não confie apenas na autorização do navegador.
+
+IMPORTANTE
+- Não publicar submit-wl novo isoladamente antes de publicar os arquivos do site e criar as perguntas.
+- A chave Supabase incluída em config.js é a chave pública anon, nunca a service_role.
+- O ZIP contém os cinco arquivos de frontend solicitados; não inclui SQL nem Edge Functions.
